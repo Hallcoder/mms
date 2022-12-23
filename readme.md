@@ -1,9 +1,9 @@
- ##Media Management System
+ ## Media Management System
 
 This is a project aiming to develop a media management sytem which allows a user to login, create account and upload content that can be viewed
 and voted by fellow users. Then the user can browse the content( public) and the content( video/ image) are sorted based on their votes count.
 
- ##Tech Stack
+ ## Tech Stack
  - React JS
  - TypeScript
  - NodeJS(Express)
