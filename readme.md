@@ -12,7 +12,7 @@ and voted by fellow users. Then the user can browse the content( public) and the
  - Vite
 
 
- ##Features
+ ## Features
 - User signup
 - User login
 - Uploading content
