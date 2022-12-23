@@ -5,4 +5,7 @@
   strong{
     color:#611b87;
   }
+  ::-webkit-scrollbar  {
+  display:none;
+  } 
 }

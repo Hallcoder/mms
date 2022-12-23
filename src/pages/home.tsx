@@ -4,16 +4,22 @@ import TopUsers from "../components/TopUsers";
 import Post from './../components/Post';
 
 const Home : React.FC = () => {
-  return <div className="w-full">
+  return <div className="w-full bg-gray-100">
   <NavBar />
   <main className="flex justify-around">
-    <aside className="w-3/12 border flex justify-center">
+    <aside className="w-3/12 border sticky top-20 max-h-[65vh] overflow-y-scroll  shadow-md rounded-md flex justify-center">
         <TopUsers />
     </aside>
-    <section className="w-6/12 border flex justify-center">
+    <section className="w-5/12 border flex flex-col items-center max-h-fit overflow-y-scroll justify-center">
+   <Post />
+   <Post />
+   <Post />
+   <Post />
+   <Post />
+   <Post />
    <Post />
     </section>
-    <aside className="w-3/12 justify-center border min-h-[40vh] rounded-md border-[#611b87]">
+    <aside className="w-3/12 justify-center border max-h-[35vh] shadow-md sticky top-20  bg-gray-100 rounded-md border-[#611b87]">
         <ProfileInfo />
     </aside>
   </main>
