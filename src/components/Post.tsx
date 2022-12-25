@@ -5,14 +5,14 @@ interface Props{
 
 }
 const Post: React.FC = () => {
-    return <div className="m-2 border rounded-md p-2">
+    return <div className="m-2 border rounded-md text-xs">
         <UserDetails name="Leo Messi" />
         <span>
             <video src={funny} width="400px" height={"400px"} controls></video>
         </span>
         <span className="w-full flex justify-between items-center">
             <VoteButton />
-            <small className="text-lg">10k Votes</small>
+            <small className="text-sm">10k Votes</small>
         </span>
     </div>
 }

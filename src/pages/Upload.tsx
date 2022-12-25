@@ -3,14 +3,17 @@ import Input from "../components/common/input";
 import { allowDrop, drop } from './../utils/utilFunctions';
 
 const Upload : React.FC = () => {
+  const handleChange = () =>{
+
+  }
     return <div className="bg-gray-50 min-h-screen">
      <NavBar />
      <div className="border-2 w-6/12 mt-[10%]  m-auto p-4 min-h-[40vh] border-[#611b87] border-dashed rounded-md  h-full flex flex-col justify-between items-center" onDrop={(e) => drop(e)} onDragOver={(e) => allowDrop(e)}>
 
-    <span className="flex">
-        <Input type="radio" value='' name='status' label="Private" placeholder=""/>
-        <Input type="radio" value='' name='status' label="Public" placeholder=""/>
-    </span>
+    <form className="flex">
+        <Input onChange={handleChange} type="radio" value='' name='status' label="Private" placeholder=""/>
+        <Input onChange={handleChange} type="radio" value='' name='status' label="Public" placeholder=""/>
+    </form>
           <h2>Select a video/picture to upload</h2>
           <h4>
             <small>or drag and drop a file</small>

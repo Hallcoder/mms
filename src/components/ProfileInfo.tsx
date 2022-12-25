@@ -2,7 +2,7 @@ import cover from "../assets/images/default.jpg";
 import profile from "../assets/images/person.jpg";
 const ProfileInfo: React.FC = () => {
   return (
-    <div>
+    <div className="h-full">
       <section className="relative w-full rounded-md flex flex-col justify-center min-h-fit ">
         <img src={cover} className="rounded-md" alt="cover default" />
         <img

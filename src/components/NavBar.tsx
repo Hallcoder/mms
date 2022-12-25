@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
   return (
     <div className="flex justify-between border w-full sticky top-0 z-[1] bg-gray-50">
       <div>
-        <h1 className="text-5xl text-[#611b87] m-2" onClick={() => navigate('/home')}>MMS</h1>
+        <h1 className="text-5xl text-[#611b87] m-2 cursor-pointer" onClick={() => navigate('/home')}>MMS</h1>
       </div>
       <div className="w-5/12 flex justify-center">
       <Input
