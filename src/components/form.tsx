@@ -57,7 +57,7 @@ const Form: React.FC<{
   const handleSubmit = (e: Event) => {
     e.preventDefault();
     setLoading(true);
-    axios.post(`${baseUrl}/user/${type}`,formData).then(data => {
+    axios.post(`${baseUrl}/user/${type}`,formData,{withCredentials:true}).then(data => {
         console.log(data.data.status);
         if(data.data.status.includes("success")){
             navigate('/home');

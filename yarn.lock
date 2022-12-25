@@ -422,6 +422,11 @@
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   "version" "2.2.0"
 
+"blob-to-buffer@^1.2.9":
+  "integrity" "sha512-BF033y5fN6OCofD3vgHmNtwZWRcq9NLyyxyILx9hfMy1sXYy4ojFl765hJ2lP0YaN2fuxPaLO2Vzzoxy0FLFFA=="
+  "resolved" "https://registry.npmjs.org/blob-to-buffer/-/blob-to-buffer-1.2.9.tgz"
+  "version" "1.2.9"
+
 "braces@^3.0.2", "braces@~3.0.2":
   "integrity" "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A=="
   "resolved" "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz"
@@ -552,6 +557,14 @@
   "integrity" "sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA=="
   "resolved" "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz"
   "version" "1.1.3"
+
+"drag-drop@^7.2.0":
+  "integrity" "sha512-cvCWy7I7zmKd82bpW5a6DivZ8BV02XtZRdC9+94kFhu2SzzOtzt7VXWmLClaqvJbkWNYc+onRilNxazao473Pw=="
+  "resolved" "https://registry.npmjs.org/drag-drop/-/drag-drop-7.2.0.tgz"
+  "version" "7.2.0"
+  dependencies:
+    "blob-to-buffer" "^1.2.9"
+    "run-parallel" "^1.2.0"
 
 "electron-to-chromium@^1.4.251":
   "integrity" "sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA=="
@@ -1037,7 +1050,7 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
-"run-parallel@^1.1.9":
+"run-parallel@^1.1.9", "run-parallel@^1.2.0":
   "integrity" "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA=="
   "resolved" "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz"
   "version" "1.2.0"
