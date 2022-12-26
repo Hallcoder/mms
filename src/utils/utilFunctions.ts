@@ -5,7 +5,7 @@ export function drag(ev: any) {
 export function allowDrop(ev: any) {
   ev.preventDefault();
 }
-export function drop(dropArea: any,setFile:any ){
+export function drop(dropArea: any,setFile:any , setFileType:any){
 
   ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
     dropArea.current.addEventListener(eventName, preventDefaults, false);
@@ -41,6 +41,7 @@ export function drop(dropArea: any,setFile:any ){
   }
   function handleFile(files: any) {
     console.log(files[0].name);
+    files[0].type.includes("video") ? setFileType("video") : setFileType("image");
    const reader = new FileReader();
    reader.readAsDataURL(files[0]);
    reader.onloadend = () => {

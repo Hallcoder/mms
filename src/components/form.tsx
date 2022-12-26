@@ -1,5 +1,5 @@
 import Input from "./common/input";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState , MouseEvent} from "react";
 import OAuth from "./oAuth";
 import Joi from "joi";
 import { baseUrl, schema } from "../utils/constants";
@@ -21,6 +21,7 @@ const Form: React.FC<{
   const [serverMessage, setServerMessage] = useState("");
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
+  const [sucess, setSuccess] = useState<boolean>(true);
   const [valid, setValid] = useState<boolean>(false);
   const [errors, setErrors] = useState<any>({
     username: "",
@@ -54,7 +55,7 @@ const Form: React.FC<{
     setFormData(formData1);
     setErrors(errors1);
   };
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setLoading(true);
     axios.post(`${baseUrl}/user/${type}`,formData,{withCredentials:true}).then(data => {
@@ -64,6 +65,7 @@ const Form: React.FC<{
         }
         setLoading(false);
       }).catch(err => {
+        setSuccess(false);
         setServerMessage(err.response.data.message);
         setLoading(false);
       })
@@ -71,7 +73,7 @@ const Form: React.FC<{
   return (
     <div className="w-6/12 min-h-[60vh] border-[#611b87] rounded-md  flex flex-col items-center border m-auto mt-[16vh] text-xs">
       <h1 className="text-[#611b87] text-6xl text-center mt-10">MMS</h1>
-      {serverMessage && <ErrorHandler message={serverMessage}/>}
+      {serverMessage && <ErrorHandler message={serverMessage} status={sucess ? "success":"failed"}/>}
       {type == "signup" && (
         <Input
           onChange={handleChange}

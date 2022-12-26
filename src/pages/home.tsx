@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import ProfileInfo from "../components/ProfileInfo";
 import TopUsers from "../components/TopUsers";
 import Post from './../components/Post';
+import { baseUrl } from "../utils/constants";
+import axios from "axios";
 
 const Home : React.FC = () => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+     axios.get(`${baseUrl}/post/content`).then(data => {
+      console.log(data.data.data);
+      setPosts(data.data.data)
+     })
+  },[])
   return <div className="w-full bg-gray-100">
   <NavBar />
   <main className="flex justify-around text-sm">
@@ -11,13 +21,12 @@ const Home : React.FC = () => {
         <TopUsers />
     </aside>
     <section className="w-5/12 border flex flex-col items-center max-h-fit overflow-y-scroll justify-center">
-   <Post />
-   <Post />
-   <Post />
-   <Post />
-   <Post />
-   <Post />
-   <Post />
+  { posts.length > 0 && posts.map(p => {
+    let {secure_url,resource_type} = p["content"];
+    let {email,username,profilePicture} =p['uploadedBy'];
+return <Post content={secure_url} email={email} username={username} pic={profilePicture} type={resource_type}/>
+  })
+  }
     </section>
     <aside className="w-3/12 justify-center border max-h-[38vh] min-h-fit shadow-md sticky top-20  bg-gray-100 rounded-md border-[#611b87]">
         <ProfileInfo />

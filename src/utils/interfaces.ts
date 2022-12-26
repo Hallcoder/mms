@@ -3,3 +3,7 @@ export interface formDataType{
   password:string,
   username?:string
 }
+export interface Post {
+  url: string;
+  type: string;
+}
